@@ -9,7 +9,20 @@ module.exports = function (grunt, config) {
 	              'viewsDist/views/css/style.min.css': ['viewsSrc/views/css/style.css']
 	            }
 	        }
+	    },
+
+	    csslint: {
+	      strict: {
+	        src: [config.cssSrcDir + '*.css', config.viewsCssSrcDir + '*css']
+	      },
+	      lax: {
+	        options: {
+	          csslintrc: '.csslintrc'
+	        },
+	        src: [config.cssSrcDir + '*.css', config.viewsCssSrcDir + '*css']
+	      }
 	    }
+
 
 	});
 };

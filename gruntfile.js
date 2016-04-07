@@ -11,8 +11,9 @@ module.exports = function(grunt) {
 		'jshint',
 		'concat',
 		'uglify',
+		'csslint',
 		'cssmin'
   	]);
 
-  	// TODO: add git functionality, cssminification, css inlining?, css/html linting
+  	// TODO: add git functionality, image optimization
 };
