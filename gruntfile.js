@@ -10,6 +10,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', [
 		'jshint',
 		'concat',
-		'uglify'
+		'uglify',
+		'cssmin'
   	]);
+
+  	// TODO: add git functionality, cssminification, css inlining?, css/html linting
 };
