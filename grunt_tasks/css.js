@@ -6,6 +6,7 @@ module.exports = function (grunt, config) {
 	            files: {
 	              // config.cssDistDir + 'style.min.css': [config.cssSrcDir + 'style.css']
 	              'dist/css/style.min.css': ['src/css/style.css'],
+	              'dist/css/print.min.css': ['src/css/print.css'],
 	              'dist/views/css/style.min.css': ['src/views/css/style.css']
 	            }
 	        }
