@@ -6,20 +6,20 @@ module.exports = function (grunt, config) {
 	            files: {
 	              // config.cssDistDir + 'style.min.css': [config.cssSrcDir + 'style.css']
 	              'dist/css/style.min.css': ['src/css/style.css'],
-	              'viewsDist/views/css/style.min.css': ['viewsSrc/views/css/style.css']
+	              'dist/views/css/style.min.css': ['src/views/css/style.css']
 	            }
 	        }
 	    },
 
 	    csslint: {
 	      strict: {
-	        src: [config.cssSrcDir + '*.css', config.viewsCssSrcDir + '*css']
+	        src: [config.cssSrcDir + '*.css', config.viewsCssSrcDir + '*.css']
 	      },
 	      lax: {
 	        options: {
 	          csslintrc: '.csslintrc'
 	        },
-	        src: [config.cssSrcDir + '*.css', config.viewsCssSrcDir + '*css']
+	        src: [config.cssSrcDir + '*.css', config.viewsCssSrcDir + '*.css']
 	      }
 	    },
 

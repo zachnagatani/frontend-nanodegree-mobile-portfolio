@@ -2,13 +2,13 @@ module.exports = function (grunt, config) {
 	grunt.config.merge({
 		concat: {
 			js: {
-				src: 'src/**/*.js',
+				src: 'src/js/*.js',
 				dest: 'src/js/perfmattersconcat.js',
 			},
-			viewsJs: {
-				src: 'viewsSrc/**/*.js',
-				dest: 'viewsDist/views/js/concat.js',
-			}
+			// viewsJs: {
+			// 	src: 'src/views/js/*.js',
+			// 	dest: 'dist/views/js/concat.js',
+			// }
 		},
 
 		uglify: {
@@ -17,7 +17,8 @@ module.exports = function (grunt, config) {
 		    },
 		    my_target: {
 		      files: {
-		        'dist/js/perfmatters.min.js': ['src/js/perfmattersconcat.js']
+		        'dist/js/perfmatters.min.js': ['src/js/perfmattersconcat.js'],
+		        'dist/views/js/main.min.js': ['src/views/js/main.js']
 		      }
 		    }
 		},

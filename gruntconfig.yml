@@ -3,7 +3,7 @@ jsConcatDir: dist/js/
 cssSrcDir: src/css/
 cssDistDir: dist/css/
 
-viewsJsSrcDir: viewsSrc/views/js/
-viewsJsConcatDir: viewsDist/views/js/
-viewsCssSrcDir: viewsSrc/views/css/
-viewsCssDistDir: viewsDist/views/css/
+viewsJsSrcDir: src/views/js/
+viewsJsConcatDir: dist/views/js/
+viewsCssSrcDir: src/views/css/
+viewsCssDistDir: dist/views/css/
