@@ -6,6 +6,8 @@ module.exports = function(grunt) {
 
 	require('./grunt_tasks/css.js')(grunt, config);
 	require('./grunt_tasks/javascript.js')(grunt, config);
+	require('./grunt_tasks/git.js')(grunt, config);
+
 
 	grunt.registerTask('default', [
 		'jshint',
@@ -13,6 +15,7 @@ module.exports = function(grunt) {
 		'uglify',
 		'csslint',
 		'cssmin',
-		'imagemin'
+		'imagemin',
+		'gh-pages'
   	]);
 };
