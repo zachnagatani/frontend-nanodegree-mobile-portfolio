@@ -21,7 +21,21 @@ module.exports = function (grunt, config) {
 	        },
 	        src: [config.cssSrcDir + '*.css', config.viewsCssSrcDir + '*css']
 	      }
-	    }
+	    },
+
+	    imagemin: {
+		    jpgs: {
+		        options: {
+		            progressive: true
+		        },
+		        files: [{
+		            expand: true,
+		            cwd: 'src/img',
+		            src: ['*.{jpg,png,gif}'],
+		            dest: 'dist/img/',
+		        }]
+		    }
+		}
 
 
 	});

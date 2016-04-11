@@ -12,8 +12,7 @@ module.exports = function(grunt) {
 		'concat',
 		'uglify',
 		'csslint',
-		'cssmin'
+		'cssmin',
+		'imagemin'
   	]);
-
-  	// TODO: add git functionality, image optimization
 };
