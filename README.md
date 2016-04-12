@@ -18,15 +18,15 @@ Clone the repository onto your local machine: `git clone https://github.com/zach
 
 There are two main directories: `src` and `dist`. All optimizations were made in the src directory.
 
-	<ol>
-		<li>From the command line, run `grunt`. This will perform the optimizations necessary and create the `dist` folder. (This folder is already present in the current/finished repository).</li>
+<ol>
+	<li>From the command line, run `grunt`. This will perform the optimizations necessary and create the `dist` folder. (This folder is already present in the current/finished repository).</li>
 
-		<li>After running `grunt`, **you must make sure that `index.html` is copied from `src` and placed in the `dist` folder. You must also make sure that `pizza.html` is copied from `src/views` and placed in `dist/views`.</li>
+	<li>After running `grunt`, **you must make sure that `index.html` is copied from `src` and placed in the `dist` folder. You must also make sure that `pizza.html` is copied from `src/views` and placed in `dist/views`.</li>
 
-		<li>Both of the above files (located in 'dist' and 'dist/views') will need their link and script tags changed to have a "min" extension added to them in order for the `dist` folder to function properly.</li>
+	<li>Both of the above files (located in 'dist' and 'dist/views') will need their link and script tags changed to have a "min" extension added to them in order for the `dist` folder to function properly.</li>
 
-		<li>From the command line, run `grunt gh-pages` to push to Github Pages for hosting!</li>
-	</ol>
+	<li>From the command line, run `grunt gh-pages` to push to Github Pages for hosting!</li>
+</ol>
 
 ## Optimizations:
 
@@ -40,25 +40,25 @@ There are two main directories: `src` and `dist`. All optimizations were made in
 
 ### pizza.html/main.js
 
-	<ol>
-		<li>changePizzaLines (Line 452)
-			- Removed determineDX from changePizzaSizes
+<ol>
+	<li>changePizzaLines (Line 452)
+		- Removed determineDX from changePizzaSizes
 
-			- Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
-		only needs to be accessed once
+		- Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
+	only needs to be accessed once
 
-			- Added a switch statement that provides cases and percentage widths for each position on the
-		slider
+		- Added a switch statement that provides cases and percentage widths for each position on the
+	slider
 
-			- Removed pixel conversion and simply made the pizzas change by a percentage
+		- Removed pixel conversion and simply made the pizzas change by a percentage
 
-			- Main accomplishment: Stopped Forced Synchronous Layout (layout thrashing) from occurring!</li>
+		- Main accomplishment: Stopped Forced Synchronous Layout (layout thrashing) from occurring!</li>
 
-		<li>updatePositions (Line 518)
+	<li>updatePositions (Line 518)
 
-			- Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
-		prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
-		scroll position for every pizza.
+		- Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
+	prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
+	scroll position for every pizza.
 
-			- Main accomplishment: Stopped FSL (which got the scrolling to run at 60fps)</li>
-	</ol>
+		- Main accomplishment: Stopped FSL (which got the scrolling to run at 60fps)</li>
+</ol>
