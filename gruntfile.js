@@ -16,7 +16,6 @@ module.exports = function(grunt) {
 		'csslint',
 		'cssmin',
 		'imagemin',
-		'htmlmin',
 		'gh-pages'
   	]);
 };
