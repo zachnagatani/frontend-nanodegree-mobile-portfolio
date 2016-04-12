@@ -42,6 +42,7 @@ There are two main directories: `src` and `dist`. All optimizations were made in
 
 
 1. changePizzaLines (Line 452)
+
 - Removed determineDX from changePizzaSizes
 
 - Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
