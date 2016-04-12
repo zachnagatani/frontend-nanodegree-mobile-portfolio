@@ -1,26 +1,59 @@
-main.js Optimizations:
+# Website Performance Opitimization
 
-1. changePizzaLines (Line 452)
-	- Removed determineDX from changePizzaSizes
+Project number 6 of Udacity's Frontend Web Developer Nanodegree, used to put our Critical Rendering Path optimization and jank eliminating skills into practice!
 
-	- Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
-only needs to be accessed once
+## Getting Started
 
-	- Added a switch statement that provides cases and percentage widths for each position on the
-slider
+### Build Tools
 
-	- Removed pixel conversion and simply made the pizzas change by a percentage
+**Grunt** was the build tool used for this project. Checkout <a href="https://discussions.udacity.com/t/grunt-and-setting-up-a-grunt-workflow-intermediate/21984">Grunt and Setting up a Grunt Workflow</a> for more info and to get started with Grunt.
 
-	- Main accomplishment: Stopped Forced Synchronous Layout (layout thrashing) from occurring!
+#### Dependecies
 
-2. updatePositions (Line 518)
+Checkout the package.json file to view the dependecies used in this project.
 
-	- Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
-prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
-scroll position for every pizza.
+### Getting Up and Running
 
-	- Main accomplishment: Stopped FSL (which got the scrolling to run at 60fps)
+Clone the repository onto your local machine: `git clone https://github.com/zachnagatani/frontend-nanodegree-mobile-portfolio.git`
 
-Build Tool: GRUNT
+There are two main directories: `src` and `dist`. All optimizations were made in the src directory.
 
-	Plugins used: 'load-grunt-tasks', 'jshint', 'concat', 'uglify', 'csslint', 'cssmin', 'imagemin', 'gh-pages'
+	1.From the command line, run `grunt`. This will perform the optimizations necessary and create the `dist` folder. (This folder is already present in the current/finished repository).
+
+	2. After running `grunt`, **you must make sure that `index.html` is copied from `src` and placed in the `dist` folder. You must also make sure that `pizza.html` is copied from `src/views` and placed in `dist/views`.
+
+	3. Both of the above files (located in 'dist' and 'dist/views') will need their link and script tags changed to have a "min" extension added to them in order for the `dist` folder to function properly.
+
+	4. From the command line, run `grunt gh-pages` to push to Github Pages for hosting!
+
+## Optimizations:
+
+### index.html
+
+- Minified the CSS and JavaScript
+- Inlined the CSS (eliminate render-blocking CSS)
+- Added `media=print` to the link tag referencing print.css (eliminate render-blocking CSS)
+- Added the async attribute to the Google Analytics script tag (eliminate render-blocking JavaScript)
+- Optimized images for faster delivery
+
+### pizza.html/main.js
+	1. changePizzaLines (Line 452)
+		- Removed determineDX from changePizzaSizes
+
+		- Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
+	only needs to be accessed once
+
+		- Added a switch statement that provides cases and percentage widths for each position on the
+	slider
+
+		- Removed pixel conversion and simply made the pizzas change by a percentage
+
+		- Main accomplishment: Stopped Forced Synchronous Layout (layout thrashing) from occurring!
+
+	2. updatePositions (Line 518)
+
+		- Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
+	prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
+	scroll position for every pizza.
+
+		- Main accomplishment: Stopped FSL (which got the scrolling to run at 60fps)
