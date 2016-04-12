@@ -7,7 +7,8 @@ module.exports = function (grunt, config) {
 	              // config.cssDistDir + 'style.min.css': [config.cssSrcDir + 'style.css']
 	              'src/css/style.min.css': ['src/css/style.css'],
 	              'dist/css/print.min.css': ['src/css/print.css'],
-	              'dist/views/css/style.min.css': ['src/views/css/style.css']
+	              'dist/views/css/style.min.css': ['src/views/css/style.css'],
+	              'dist/views/css/bootstrap-grid.min.css': ['src/views/css/bootstrap-grid.css']
 	            }
 	        }
 	    },
