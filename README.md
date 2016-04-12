@@ -40,25 +40,24 @@ There are two main directories: `src` and `dist`. All optimizations were made in
 
 ### pizza.html/main.js
 
-<ol>
-	<li>changePizzaLines (Line 452)
-		- Removed determineDX from changePizzaSizes
 
-		- Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
-	only needs to be accessed once
+1. changePizzaLines (Line 452)
+- Removed determineDX from changePizzaSizes
 
-		- Added a switch statement that provides cases and percentage widths for each position on the
-	slider
+- Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
+only needs to be accessed once
 
-		- Removed pixel conversion and simply made the pizzas change by a percentage
+- Added a switch statement that provides cases and percentage widths for each position on the
+slider
 
-		- Main accomplishment: Stopped Forced Synchronous Layout (layout thrashing) from occurring!</li>
+- Removed pixel conversion and simply made the pizzas change by a percentage
 
-	<li>updatePositions (Line 518)
+- Main accomplishment: Stopped Forced Synchronous Layout (layout thrashing) from occurring!
 
-		- Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
-	prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
-	scroll position for every pizza.
+2. updatePositions (Line 518)
 
-		- Main accomplishment: Stopped FSL (which got the scrolling to run at 60fps)</li>
-</ol>
+- Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
+prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
+scroll position for every pizza.
+
+- Main accomplishment: Stopped FSL (which got the scrolling to run at 60fps)
