@@ -41,7 +41,7 @@ There are two main directories: `src` and `dist`. All optimizations were made in
 ### pizza.html/main.js
 
 
-1. changePizzaLines (Line 452)
+` changePizzaLines` (Line 452)
 
 - Removed determineDX from changePizzaSizes
 
@@ -55,7 +55,7 @@ slider
 
 - Main accomplishment: Stopped Forced Synchronous Layout (layout thrashing) from occurring!
 
-2. updatePositions (Line 518)
+`updatePositions` (Line 518)
 
 - Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
 prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
