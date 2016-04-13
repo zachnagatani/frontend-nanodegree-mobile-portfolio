@@ -8,9 +8,9 @@ Project number 6 of Udacity's Frontend Web Developer Nanodegree, used to put our
 
 **Grunt** was the build tool used for this project. Checkout <a href="https://discussions.udacity.com/t/grunt-and-setting-up-a-grunt-workflow-intermediate/21984">Grunt and Setting up a Grunt Workflow</a> for more info and to get started with Grunt.
 
-#### Dependecies
+#### Dependencies
 
-Checkout the package.json file to view the dependecies used in this project.
+Checkout the package.json file to view the dependencies used in this project.
 
 ### Getting Up and Running
 
@@ -23,7 +23,7 @@ There are two main directories: `src` and `dist`. All optimizations were made in
 
 2. After running `grunt`, **you must make sure that `index.html` is copied from `src` and placed in the `dist` folder. You must also make sure that `pizza.html` is copied from `src/views` and placed in `dist/views`.**
 
-3. Both of the above files (located in 'dist' and 'dist/views') will need their link and script tags changed to have a "min" extension added to them in order for the `dist` folder to function properly.
+3. Both of the above files (located in 'dist' and 'dist/views') will need their link and script tags changed to have a `.min.css` extension added to them in order for the `dist` folder to function properly.
 
 3. From the command line, run `grunt gh-pages` to push to Github Pages for hosting!
 
