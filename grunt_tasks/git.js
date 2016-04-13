@@ -1,4 +1,4 @@
-module.exports = function (grunt, config) {
+module.exports = function(grunt, config) {
 	grunt.config.merge({
 		'gh-pages': {
 			options: {
@@ -6,17 +6,5 @@ module.exports = function (grunt, config) {
 			},
 			dist: ['**']
 		},
-
-		htmlmin: {                                     // Task
-		    dist: {                                      // Target
-		      options: {                                 // Target options
-		        removeComments: true,
-		        collapseWhitespace: true
-		      },
-		      files: {                                   // Dictionary of files
-		        'dist/index.html': 'src/index.html',     // 'destination': 'source'
-		      }
-		    }
-		}
 	});
 };

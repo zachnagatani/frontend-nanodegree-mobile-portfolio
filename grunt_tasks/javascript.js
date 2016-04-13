@@ -1,4 +1,4 @@
-module.exports = function (grunt, config) {
+module.exports = function(grunt, config) {
 	grunt.config.merge({
 		concat: {
 			js: {
@@ -12,22 +12,23 @@ module.exports = function (grunt, config) {
 		},
 
 		uglify: {
-		    options: {
-		      mangle: false
-		    },
-		    my_target: {
-		      files: {
-		        'dist/js/perfmatters.min.js': ['src/js/perfmattersconcat.js'],
-		        'dist/views/js/main.min.js': ['src/views/js/main.js']
-		      }
-		    }
+			options: {
+				mangle: false
+			},
+			my_target: {
+				files: {
+					'dist/js/perfmatters.min.js': ['src/js/perfmattersconcat.js'],
+					'dist/views/js/main.min.js': ['src/views/js/main.js']
+				}
+			}
 		},
 
 		jshint: {
 			all: [
-			'Gruntfile.js',
-			config.jsSrcDir + "*.js",
-			config.viewsJsSrcDir + "*.js"
+				'Gruntfile.js',
+				'grunt_tasks/*.js',
+				config.jsSrcDir + "*.js",
+				config.viewsJsSrcDir + "*.js"
 			]
 		}
 	});
