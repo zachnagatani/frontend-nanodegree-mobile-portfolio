@@ -16,17 +16,17 @@ Checkout the package.json file to view the dependecies used in this project.
 
 Clone the repository onto your local machine: `git clone https://github.com/zachnagatani/frontend-nanodegree-mobile-portfolio.git`
 
-There are two main directories: `src` and `dist`. All optimizations were made in the src directory.
+There are two main directories: `src` and `dist`. All optimizations were made in the `src` directory.
 
-<ol>
-	<li>From the command line, run `grunt`. This will perform the optimizations necessary and create the `dist` folder. (This folder is already present in the current/finished repository).</li>
 
-	<li>After running `grunt`, **you must make sure that `index.html` is copied from `src` and placed in the `dist` folder. You must also make sure that `pizza.html` is copied from `src/views` and placed in `dist/views`.</li>
+1. From the command line, run `grunt`. This will perform the optimizations necessary and create the `dist` folder. (This folder is already present in the current/finished repository).
 
-	<li>Both of the above files (located in 'dist' and 'dist/views') will need their link and script tags changed to have a "min" extension added to them in order for the `dist` folder to function properly.</li>
+2. After running `grunt`, **you must make sure that `index.html` is copied from `src` and placed in the `dist` folder. You must also make sure that `pizza.html` is copied from `src/views` and placed in `dist/views`.**
 
-	<li>From the command line, run `grunt gh-pages` to push to Github Pages for hosting!</li>
-</ol>
+3. Both of the above files (located in 'dist' and 'dist/views') will need their link and script tags changed to have a "min" extension added to them in order for the `dist` folder to function properly.
+
+3. From the command line, run `grunt gh-pages` to push to Github Pages for hosting!
+
 
 ## Optimizations:
 
@@ -41,11 +41,11 @@ There are two main directories: `src` and `dist`. All optimizations were made in
 ### pizza.html/main.js
 
 
-` changePizzaLines` (Line 452)
+`changePizzaLines` (Line 452)
 
-- Removed determineDX from changePizzaSizes
+- Removed `determineDX` from `changePizzaSizes`
 
-- Stored the querySelectorAll for .randomPizzaContainer in a variable "randomPizzas" so the DOM
+- Stored the `querySelectorAll` for `.randomPizzaContainer` in a variable `randomPizzas` so the DOM
 only needs to be accessed once
 
 - Added a switch statement that provides cases and percentage widths for each position on the
@@ -57,7 +57,7 @@ slider
 
 `updatePositions` (Line 518)
 
-- Removed "document.body.scrollTop / 1250" from the for loop and stored it in a variable. This
+- Removed `document.body.scrollTop / 1250` from the for loop and stored it in a variable. This
 prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
 scroll position for every pizza.
 
