@@ -40,6 +40,7 @@ There are two main directories: `src` and `dist`. All optimizations were made in
 
 ### pizza.html/main.js
 
+- Changed all `querySelectors` into `getElementById` or `getElementsByClassName`
 
 `changePizzaLines` (Line 452)
 
@@ -61,4 +62,15 @@ slider
 prevents FSL (no dimension accessing and then style changes), and keeps us from accessing the
 scroll position for every pizza.
 
+- Moved `items` variable outside of the function. `Items` doesn't change, so there is no need to
+create it with every function call.
+
 - Main accomplishment: Stopped FSL (which got the scrolling to run at 60fps)
+
+(Line 565)
+
+- Stored `getElemenybyId("movingPizzas1") in variable outside of for loop
+
+- Used variable within for loop
+
+- Changed number of pizzas rendered from 200 to the minimum needed (32) (Line 569)
